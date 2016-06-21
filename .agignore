@@ -1,0 +1,11 @@
+log
+doc
+tags
+coverage
+cassettes
+fonts
+generated
+node_modules
+vendor
+tmp
+bower_components

@@ -1,0 +1,85 @@
+# Shell
+alias ll="ls -l"
+alias la="ls -a"
+alias lll="la -l"
+alias md='mkdir -p'
+alias rd='rmdir'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias psg='ps aux | grep'
+alias h='history'
+alias vi='vim'
+alias e='vim'
+
+# Tmux
+alias tml='tmux ls'
+alias tmn='tmux new -s'
+alias tma='tmux attach -t'
+
+# Git
+alias gap='git add -p'
+alias ga='git add'
+alias gnap='git add -N . && git add -p'
+alias gb='git branch'
+alias gc='git commit -v'
+alias gca='git commit -a -v'
+alias gd='git diff --color-words'
+alias gdc='git diff --cached'
+alias gdh='git diff HEAD'
+alias gl='git pull'
+alias glod='git log --graph --pretty="%Cgreen%h%Creset%Cblue%d%Creset %Cred%an%Creset: %s"'
+alias gp='git push'
+alias gpr='git pull --rebase'
+alias gst='git status'
+alias gr='git rebase'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias gra='git rebase --abort'
+alias gcp='git cherry-pick'
+alias reset-authors='git commit --amend --reset-author -C HEAD'
+
+# Infrastructure
+alias ap='ansible-playbook'
+alias agx='ansible-galaxy'
+alias av='ansible-vault'
+alias dc='docker-compose'
+alias dcu='dc up'
+alias dcp='dc ps'
+alias dcg='dcp | grep'
+
+# Ruby/Rails
+alias be='bundle exec'
+alias sc='script_rails console'
+alias ss='script_rails server'
+alias sdbc='script_rails dbconsole -p'
+alias groutes='rake routes | grep $@'
+alias rc='bin/fig run worker bundle exec rails c'
+
+# JavaScript
+alias nom='rm -rf node_modules && npm cache clear && npm install'
+alias bom='rm -rf bower_components && bower cache clean && bower install'
+alias ember='bin/fig run rhine ember'
+alias et='ember test'
+alias ets='ember test --server'
+
+# Service Shortcuts
+SRC_PATH="$HOME/src"
+PLATFORM_PATH="$SRC_PATH/wellmatch_platform"
+alias platform="cd $PLATFORM_PATH"
+alias cuyahoga="cd $PLATFORM_PATH/components/cuyahoga"
+alias rhine="cd $PLATFORM_PATH/components/cuyahoga/rhine"
+alias nile="cd $PLATFORM_PATH/components/nile"
+alias riogrande="cd $PLATFORM_PATH/components/rio_grande"
+alias ganges="cd $PLATFORM_PATH/components/ganges"
+alias gateway="cd $SRC_PATH/wellmatch_api_gateway"
+alias accounts="cd $SRC_PATH/wellmatch_accounts"
+alias pricing="cd $SRC_PATH/wellmatch_pricing"
+alias providers="cd $SRC_PATH/wellmatch_provider_service"
+alias taxonomy="cd $SRC_PATH/wellmatch_taxonomy"
+alias ui="cd $SRC_PATH/wellmatch_ui"
+
+# Other
+alias aliases="cat ~/dotfiles/.aliases"

@@ -1,5 +1,5 @@
 [github]
-	user = wellmatchdev
+	user = GITHUB_USERNAME
 [user]
-	email = dev@wellmatchhealth.com
-	name = "WellMatch Workstation"
+	email = EMAIL@gmail.com
+	name = "Dev Workstation"

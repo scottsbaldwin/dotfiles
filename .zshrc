@@ -6,7 +6,7 @@ fpath=(
 )
 
 source "$HOME/.aliases"
-source "$HOME/.wmrc"
+source "$HOME/.ssbrc"
 
 # color term
 export CLICOLOR=1
@@ -70,8 +70,16 @@ if [ -z "$TMUX" ]; then
 fi
 
 # prompt
-PROMPT='%{$fg_bold[green]%}%n@%m%{$reset_color%}:%{$fg_bold[cyan]%}%~%{$reset_color%}$(git_prompt_info "(%s)")%# '
+# PROMPT='%{$fg_bold[green]%}%n@%m%{$reset_color%}:%{$fg_bold[cyan]%}%~%{$reset_color%}$(git_prompt_info "(%s)")%# '
 
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+#
 # show non-success exit code in right prompt
 RPROMPT="%(?..{%{$fg[red]%}%?%{$reset_color%}})"
 
@@ -99,7 +107,7 @@ alias lsd='ls -ld *(-/DN)'
 # set cd autocompletion to commonly visited directories
 cdpath=(~ ~/src $DEV_DIR $HASHROCKET_DIR)
 
-source ~/dotfiles/bin/tmuxinator.zsh
+# source ~/dotfiles/bin/tmuxinator.zsh
 
 # rvm-install added line:
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi

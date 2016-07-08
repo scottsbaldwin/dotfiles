@@ -55,3 +55,4 @@
 	default = tracking
 [rebase]
 	autosquash = true
+[http]

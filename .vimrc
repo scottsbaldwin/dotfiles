@@ -3,6 +3,7 @@ runtime! autoload/pathogen.vim
 syntax on
 filetype plugin indent on
 
+set encoding=utf-8
 set visualbell
 
 set wildmenu
@@ -13,9 +14,10 @@ set splitbelow
 
 set hidden
 
-set guifont=Monaco:h16
+" set guifont=Monaco:h16
+" set guifont=Meslo:h16
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
-set shell=bash
+set shell=zsh
 
 augroup vimrc
   autocmd!
@@ -114,7 +116,8 @@ if getcwd() != $HOME && getcwd() != $DOTFILES_DIR && getcwd() != expand("$HOME/s
   endif
 endif
 
-colorscheme Tomorrow-Night-Eighties
+" set background=dark
+" colorscheme Tomorrow-Night-Eighties
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local

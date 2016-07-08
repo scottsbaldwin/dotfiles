@@ -1,8 +1,8 @@
 # ~/.wmrc
 # vim:set ft=sh sw=2 sts=2:
 
-[ -e "$WELLMATCH_DIR" ] || WELLMATCH_DIR="$HOME/src"
-export WELLMATCH_DIR
+[ -e "$SSB_DIR" ] || SSB_DIR="$HOME/src"
+export SSB_DIR
 
 VIMRC_PATH="$(readlink ~/.vimrc)"
 [ -e "$DOTFILES_DIR" ] || DOTFILES_DIR="$(dirname $VIMRC_PATH)"
@@ -28,7 +28,7 @@ for dir in /usr/local/sbin /opt/local/sbin /usr/X11/bin; do
 done
 
 hcd() {
-  cd "$WELLMATCH_DIR/$1"
+  cd "$SSB_DIR/$1"
   if [ -e .git/safe -a ! -L .git/bin ]; then
     ln -s ../bin .git
   fi
@@ -55,11 +55,11 @@ if [ -n "$BASH_VERSION" ]; then
   {
     local cur projects
 
-    [ -r "$WELLMATCH_DIR" ] || return 0
+    [ -r "$SSB_DIR" ] || return 0
 
     eval 'COMPREPLY=()'
     cur=${COMP_WORDS[COMP_CWORD]}
-    projects=$(\ls "$WELLMATCH_DIR")
+    projects=$(\ls "$SSB_DIR")
 
     if [ $COMP_CWORD -eq 1 ]; then
       eval 'COMPREPLY=( $(compgen -o filenames -W "$projects" $cur) )'
@@ -69,7 +69,7 @@ if [ -n "$BASH_VERSION" ]; then
   }
   complete -F _hcd hcd hclone
 elif [ -n "$ZSH_VERSION" ]; then
-  compctl -/ -S '' -W "$WELLMATCH_DIR" hcd
+  compctl -/ -S '' -W "$SSB_DIR" hcd
 fi
 
 __rails_root() {
@@ -172,4 +172,4 @@ if [ "$(uname)" = Darwin -a "$(command -v vim)" = /usr/bin/vim ]; then
   [ -f "$HOME$bettervim" ] && alias vim="$HOME$bettervim"
 fi
 
-source "$DOTFILES_DIR/wmenv.sh"
+# source "$DOTFILES_DIR/wmenv.sh"

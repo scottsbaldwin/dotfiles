@@ -5,6 +5,7 @@ alias lll="la -l"
 alias md='mkdir -p'
 alias rd='rmdir'
 alias cd..='cd ..'
+alias cds='cd ~/src'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -67,19 +68,6 @@ alias ets='ember test --server'
 
 # Service Shortcuts
 SRC_PATH="$HOME/src"
-PLATFORM_PATH="$SRC_PATH/wellmatch_platform"
-alias platform="cd $PLATFORM_PATH"
-alias cuyahoga="cd $PLATFORM_PATH/components/cuyahoga"
-alias rhine="cd $PLATFORM_PATH/components/cuyahoga/rhine"
-alias nile="cd $PLATFORM_PATH/components/nile"
-alias riogrande="cd $PLATFORM_PATH/components/rio_grande"
-alias ganges="cd $PLATFORM_PATH/components/ganges"
-alias gateway="cd $SRC_PATH/wellmatch_api_gateway"
-alias accounts="cd $SRC_PATH/wellmatch_accounts"
-alias pricing="cd $SRC_PATH/wellmatch_pricing"
-alias providers="cd $SRC_PATH/wellmatch_provider_service"
-alias taxonomy="cd $SRC_PATH/wellmatch_taxonomy"
-alias ui="cd $SRC_PATH/wellmatch_ui"
 
 # Other
 alias aliases="cat ~/dotfiles/.aliases"

@@ -1,15 +1,11 @@
 dotfiles
 ========
 
-Wellmatch Dotfiles
-
 Dotmatrix is a collection of dotfiles used at Hashrocket to customize various
 deveopment tools. This project is the culmination of many years worth of
 tinkering with our favorite tools to get them to behave just right. We think
 using dotmatrix makes working with these tools more pleasant and hope you will
 too!
-
-Looking for **wmenv** documentation? See [WMENV.md](WMENV.md).
 
 What are dotfiles?
 ------------------
@@ -24,11 +20,7 @@ dotfiles, open a terminal and in your home folder run this:
 Install
 -------
 
-Start by cloning down the repo:
-
-	$ git clone https://github.com/healthagentech/dotfiles.git
-
-Then run this script:
+Start by cloning down the repo. Then run this script:
 
 	$ bin/install
 
@@ -82,7 +74,7 @@ You need not include a trailing `.git`.
 
 In addition, our Dotfiles support the ability to limit plugins for a given project.  Simply place a `.vimbundle` file in the project root, containing a whitelist of the plugins that should be loaded. This gives us the flexibility to have specific global, personal and project-specific plugin configurations that match the behavior of the `.vimrc` file. This gives us the ability to experiment with new plugins easily, as well as to triage potential issues by limiting what is loaded.
 
-Project `.vimbundle`s are also consulted when installing/updating plugins -- as long as they are within the `$WELLMATCH_DIR`. This directory can, of course, be overridden on your local machine should you choose to organize things differently.
+Project `.vimbundle`s are also consulted when installing/updating plugins -- as long as they are within the `$SSB_DIR`. This directory can, of course, be overridden on your local machine should you choose to organize things differently.
 
 ## Terminal configuration
 ---
@@ -94,14 +86,6 @@ In order for this to work, your terminal emulator needs to use a font with the r
 In case you're using iTerm2:  to configure, go to `Preferences` -> `Profiles` -> `Text`, and set both the `Regular Font` and `Non-ASCII Font` settings to the one you just installed.  You may have to tweak the font size, particularly for the `Non-ASCII Font` setting, to get the chevrons to line up.  Using the [Hack][hack-font] font, you will likely need to set `Non-ASCII Font` size to be 1pt smaller than the `Regular Font` size.
 
   [hack-font]: https://github.com/powerline/fonts/raw/master/Hack/Hack-Regular.ttf "Hack Regular"
-
-Actively Maintained
--------------------
-
-At WellMatch we use dotmatrix on all of our development machines, then for
-many of us we get so used to the setup that we use it on our personal machines
-too. That means there's a lot of picky nerds using dotmatrix every day to make
-their tools easy and fun to use.
 
 Update
 ------

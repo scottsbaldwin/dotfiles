@@ -2,7 +2,7 @@
 # vim:set ft=sh sw=2 sts=2:
 
 source "$HOME/.aliases"
-source "$HOME/.wmrc"
+source "$HOME/.ssbrc"
 
 # Store 10,000 history entries
 export HISTSIZE=10000

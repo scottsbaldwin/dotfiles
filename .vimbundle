@@ -52,3 +52,4 @@ nelstrom/vim-textobj-rubyblock
 mustache/vim-mustache-handlebars
 elixir-lang/vim-elixir
 ekalinin/Dockerfile.vim
+fatih/vim-go

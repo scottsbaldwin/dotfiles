@@ -5,8 +5,18 @@ fpath=(
   /usr/local/share/zsh/site-functions
 )
 
+
+
+plugins=(zsh-autosuggestions)
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
+
+
 source "$HOME/.aliases"
 source "$HOME/.ssbrc"
+source "$HOME/.profile"
 
 # color term
 export CLICOLOR=1
@@ -73,7 +83,8 @@ fi
 # PROMPT='%{$fg_bold[green]%}%n@%m%{$reset_color%}:%{$fg_bold[cyan]%}%~%{$reset_color%}$(git_prompt_info "(%s)")%# '
 
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+PROMPT='╭─ %{$fg[blue]%}%* [%h] %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)
+╰─ ${ret_status}%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
@@ -129,3 +140,5 @@ zrcl="$HOME/.zshrc.local"
 
 # remove duplicates in $PATH
 typeset -aU path
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

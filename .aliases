@@ -19,6 +19,8 @@ alias e='vim'
 alias tml='tmux ls'
 alias tmn='tmux new -s'
 alias tma='tmux attach -t'
+alias tmcn='tmux -CC new -s'
+alias tmca='tmux -CC attach -t'
 
 # Git
 alias gap='git add -p'

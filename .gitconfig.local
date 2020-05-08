@@ -1,3 +1,5 @@
+[commit]
+	template = ~/.gitmessage
 [github]
 	user = GITHUB_USERNAME
 [user]

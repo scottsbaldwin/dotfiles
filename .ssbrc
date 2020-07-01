@@ -172,4 +172,13 @@ if [ "$(uname)" = Darwin -a "$(command -v vim)" = /usr/bin/vim ]; then
   [ -f "$HOME$bettervim" ] && alias vim="$HOME$bettervim"
 fi
 
-# source "$DOTFILES_DIR/wmenv.sh"
+# Airbrake Functions
+awssts () {
+  if [[ ! "$1" ]] ; then
+    echo "You must supply a token code."
+    return 0
+  fi
+
+  aws-sts -e token_code=$1
+  return 0
+}

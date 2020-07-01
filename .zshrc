@@ -5,14 +5,11 @@ fpath=(
   /usr/local/share/zsh/site-functions
 )
 
-
-
 plugins=(zsh-autosuggestions)
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
-
 
 source "$HOME/.aliases"
 source "$HOME/.ssbrc"
@@ -142,3 +139,8 @@ zrcl="$HOME/.zshrc.local"
 typeset -aU path
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# completion for AWS CLI
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
+

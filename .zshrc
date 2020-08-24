@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 fpath=(
   $fpath
   ~/.rvm/scripts/zsh/Completion
@@ -8,6 +15,7 @@ fpath=(
 plugins=(zsh-autosuggestions)
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 source $ZSH/oh-my-zsh.sh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 
@@ -79,17 +87,17 @@ fi
 # prompt
 # PROMPT='%{$fg_bold[green]%}%n@%m%{$reset_color%}:%{$fg_bold[cyan]%}%~%{$reset_color%}$(git_prompt_info "(%s)")%# '
 
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT='╭─ %{$fg[blue]%}%* [%h] %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)
-╰─ ${ret_status}%{$reset_color%}'
+# local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+# PROMPT='╭─ %{$fg[blue]%}%* [%h] %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)
+# ╰─ ${ret_status}%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 #
 # show non-success exit code in right prompt
-RPROMPT="%(?..{%{$fg[red]%}%?%{$reset_color%}})"
+# RPROMPT="%(?..{%{$fg[red]%}%?%{$reset_color%}})"
 
 # history
 HISTFILE=~/.zsh_history
@@ -144,3 +152,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
+
+# add Go bin dir to path
+PATH=$PATH:$HOME/go/bin
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

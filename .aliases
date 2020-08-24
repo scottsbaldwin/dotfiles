@@ -28,6 +28,7 @@ alias ga='git add'
 alias gnap='git add -N . && git add -p'
 alias gb='git branch'
 alias gc='git commit -v'
+alias gco='git checkout'
 alias gca='git commit -a -v'
 alias gd='git diff --color-words'
 alias gdc='git diff --cached'
@@ -73,3 +74,12 @@ SRC_PATH="$HOME/src"
 
 # Other
 alias aliases="cat ~/dotfiles/.aliases"
+
+# Kubernetes
+alias k=kubectl
+alias kd="kubectl -n develop"
+alias hd="helm -n develop"
+alias ks="kubectl -n staging"
+alias hs="helm -n staging"
+alias kp="kubectl -n production"
+alias hp="helm -n production"

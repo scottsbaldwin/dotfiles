@@ -79,7 +79,12 @@ alias aliases="cat ~/dotfiles/.aliases"
 alias k=kubectl
 alias kd="kubectl -n develop"
 alias hd="helm -n develop"
-alias ks="kubectl -n staging"
-alias hs="helm -n staging"
-alias kp="kubectl -n production"
-alias hp="helm -n production"
+alias ks="kubectl -n staging --kubeconfig=$HOME/.kube/eks-staging"
+alias hs="helm -n staging --kubeconfig=$HOME/.kube/eks-staging"
+alias k9ss="k9s -A --kubeconfig=$HOME/.kube/eks-staging"
+alias kp="kubectl -n production --kubeconfig=$HOME/.kube/eks-production"
+alias hp="helm -n production --kubeconfig=$HOME/.kube/eks-production"
+alias k9sp="k9s -A --kubeconfig=$HOME/.kube/eks-production"
+
+# AWS
+alias awsume=". awsume"
